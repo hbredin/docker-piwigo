@@ -12,14 +12,20 @@ server {
         try_files $uri $uri/ /index.php;
     }
 
+    # deny all access to http://localhost/galleries 
+    # where your pictures are stored
     location /galleries/ {
     	deny all;
     }
 
+    # deny all access to http://localhost/upload
+    # where your uploaded pictures are stored
     location /upload/ {
     	deny all;
     }
 
+    # deny all access to http://localhost/_data/i
+    # where your thumbnails are stored
     location /_data/i/ {
     	deny all;
     }
